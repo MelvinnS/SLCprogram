@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Spotify</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Your Library</h3>
+                <div class="sidebar-actions">
+                    <button class="create-btn">+ Create</button>
+                    <button class="expand-btn">↗</button>
+                </div>
+            </div>
+
+            <div class="sidebar-tabs">
+                <button class="tab-btn active">Playlists</button>
+                <button class="tab-btn">Podcasts</button>
+            </div>
+
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <div class="sidebar-content">
+                <a href="4.html" class="playlist-item">
+                    <img src="assets/attedance.png" alt="Reporter 1">
+                    <div>
+                        <h4>attedance</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="5.html" class="playlist-item">
+                    <img src="assets/ekskul.png" alt="Reporter 2">
+                    <div>
+                        <h4>extracurricular</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="6.html" class="playlist-item">
+                    <img src="assets/challanges.png" alt="Reporter 3">
+                    <div>
+                        <h4>challanges</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="7.html" class="playlist-item">
+                    <img src="assets/conclusion.png" alt="Reporter 4">
+                    <div>
+                        <h4> conclusion</h4>
+                        <p>Playlist • early</p>
+                    </div>
+                </a>
+
+                <a href="3.html" class="playlist-item">
+                    <img src="assets/support.png" alt="Reporter 4">
+                    <div>
+                        <h4>support</h4>
+                        <p>Playlist</p>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="profile-content">
+            <!-- Header with Back Button -->
+            <div class="profile-header">
+                <a href="2.html" class="back-btn">←</a>
+            </div>
+
+            <!-- Restructured profile section with horizontal layout -->
+            <section class="profile-section">
+                <div class="profile-top">
+                    <div class="profile-pic-container">
+                        <img src="assets/pp.jpg" alt="Profile Picture" class="profile-pic">
+                    </div>
+
+                    <div class="profile-info-right">
+                        <h1 class="profile-name">Melvin Andrea I.</h1>
+                        <div class="profile-info">
+                            <span>XI Class</span>
+                            <span class="separator">•</span>
+                            <span>6 Following</span>
+                        </div>
+
+                        <div class="profile-buttons">
+                            <button class="btn-add">+ Add</button>
+                            <button class="btn-edit">Edit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moved All About Me section below profile -->
+                <div class="about-section">
+                    <h2>All About Me</h2>
+                    <div class="about-grid">
+                        <div class="about-item">
+                            <div class="image-wrapper">
+                                <img src="assets/aboutme.png" alt="About Me" class="about-image">
+                                <div class="play-button" onclick="window.location.href='profile1.html'">
+                                    <span class="play-icon">▶</span>
+                                </div>
+                            </div>
+                            <h3>Foto 1</h3>
+                            <p>My Self</p>
+                        </div>
+
+                        <div class="about-item">
+                            <div class="image-wrapper">
+                                <img src="assets/hobby.png" alt="My Hobbies" class="about-image">
+                                <div class="play-button" onclick="window.location.href='profile2.html'">
+                                    <span class="play-icon">▶</span>
+                                </div>
+                            </div>
+                            <h3>Foto 2</h3>
+                            <p>My Hobbies</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

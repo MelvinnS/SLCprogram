@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto 1 - Spotify</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profile1.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Sidebar (sama dengan profile) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Your Library</h3>
+                <div class="sidebar-actions">
+                    <button class="create-btn">+ Create</button>
+                    <button class="expand-btn">↗</button>
+                </div>
+            </div>
+
+            <div class="sidebar-tabs">
+                <button class="tab-btn active">Playlists</button>
+                <button class="tab-btn">Podcasts</button>
+            </div>
+
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <div class="sidebar-content">
+                <a href="4.html" class="playlist-item">
+                    <img src="assets/lib1.png" alt="Reporter 1">
+                    <div>
+                        <h4>Reporter 1</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="5.html" class="playlist-item">
+                    <img src="assets/lib2.png" alt="Reporter 2">
+                    <div>
+                        <h4>Reporter 2</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="6.html" class="playlist-item">
+                    <img src="assets/lib3.png" alt="Reporter 3">
+                    <div>
+                        <h4>Reporter 3</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="7.html" class="playlist-item">
+                    <img src="assets/lib4.png" alt="Reporter 4">
+                    <div>
+                        <h4>Reporter 4</h4>
+                        <p>Playlist • early</p>
+                    </div>
+                </a>
+
+                <a href="3.html" class="playlist-item">
+                    <img src="assets/lib5.png" alt="Reporter 4">
+                    <div>
+                        <h4>Reporter 4</h4>
+                        <p>Playlist</p>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="profile-content detail-content">
+            <!-- Header with Back Button -->
+            <div class="profile-header">
+                <a href="profile.html" class="back-btn">←</a>
+            </div>
+
+            <!-- Detail Section -->
+            <section class="detail-section">
+                <!-- Top area with large background image -->
+                <div class="detail-header">
+                    <div class="artist-badge">
+                        <span class="badge-icon">✓</span>
+                        <span class="badge-text">Verified Artist</span>
+                    </div>
+                    <h1 class="artist-name">Lana Del Rey</h1>
+                    <p class="listener-count">61,931,181 monthly listeners</p>
+                </div>
+
+                <!-- Content area with carousel and about -->
+                <div class="detail-body">
+                    <!-- Left side: Carousel -->
+                    <div class="carousel-section">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-item">
+                                    <img src="assets/aboutme.png" alt="Foto 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/hobby.png" alt="Foto 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="assets/hps.jpg" alt="Foto 3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                    </div>
+
+                    <!-- Right side: About Me -->
+                    <div class="about-me-section">
+                        <h2>About Me</h2>
+                        <p>i was born in Malang on 6 june 2009 and i have a many skils at telkoms bla bla bla bla bla bla bla bla bla bla</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="profile1.js"></script>
+    <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

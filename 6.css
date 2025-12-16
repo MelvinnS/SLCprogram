@@ -1,0 +1,382 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+:root{
+  --sidebar-width:72px;
+  --header-height:260px;
+  --card-size:240px;
+}
+
+body{
+  margin:0;
+  background:#020b10;
+  overflow:hidden;
+  color:#fff; /* SEMUA TEKS PUTIH */
+}
+
+.app{
+  display:flex;
+  min-height:100vh;
+  width:100%;
+}
+
+/* SIDEBAR */
+.sidebar{
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  width:96px;
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:12px 0;
+}
+
+.sidebar-top{
+  display:flex;
+  gap:6px;
+  margin-bottom:14px;
+}
+
+.dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#fff;
+}
+
+.menu{
+  background:#1a1a1a;
+  border-radius:18px;
+  width:72px;
+  padding:14px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+}
+
+.menu a{
+  color:#aaa;
+  font-size:22px;
+  transition:.25s;
+}
+
+.menu a.active,
+.menu a:hover{
+  color:#fff;
+  transform:scale(1.15);
+}
+
+.sidebar-images{
+  margin-top:18px;
+  background:#1a1a1a;
+  border-radius:18px;
+  width:72px;
+  padding:10px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.sidebar-images img{
+  width:56px;
+  height:56px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+/* MAIN */
+.main{
+  margin-left:96px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  height:100vh; /* AGAR CONTENT BISA SCROLL */
+}
+
+/* HEADER */
+.header{
+  height:260px;
+  padding:36px 56px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(180deg,#23c6eb 0%,#14a0ce 40%,#05476a 100%);
+}
+
+.header-left{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.profile-img{
+  width:210px;
+  height:210px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+.small{
+  font-size:14px;
+  opacity:.9;
+}
+
+.header-text h1{
+  font-size:69px;
+  font-weight:770;
+  margin:1px 0;
+}
+
+.header-text p{
+  opacity:.85;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.upgrade{
+  background:#fff;
+  color:#000; /* TETAP HITAM */
+  border:none;
+  padding:8px 18px;
+  border-radius:20px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* CONTENT */
+.content{
+  flex:1;
+  padding:36px 56px 120px;
+  background:linear-gradient(180deg,#062738 0%,#01080b 40%,#000000 100%);
+  overflow-y:auto; /* SCROLL AKTIF */
+}
+
+.follow{
+  border:1px solid #fff;
+  background:transparent;
+  color:#fff;
+  padding:6px 20px;
+  border-radius:20px;
+  margin-bottom:25px;
+  cursor:pointer;
+}
+
+.content h2{
+  margin-bottom:20px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:32px;
+}
+
+.card{
+  text-align:center;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:80%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+
+.card h3{
+  margin-top:12px;
+}
+
+.card span{
+  font-size:13px;
+  opacity:.7;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .cards{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .sidebar{
+    display:none;
+  }
+
+  .header{
+    flex-direction:column;
+    height:auto;
+    gap:20px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* HIDE SCROLLBAR TAPI TETAP BISA SCROLL */
+
+/* Chrome, Edge, Safari */
+.content::-webkit-scrollbar{
+  width:0;
+  height:0;
+}
+
+/* Firefox */
+.content{
+  scrollbar-width:none;
+}
+
+/* Internet Explorer & Edge lama */
+.content{
+  -ms-overflow-style:none;
+}
+
+body{
+  animation:enterZoom .4s ease-out;
+}
+
+.page-exit{
+  animation:exitZoom .3s ease-in forwards;
+}
+
+@keyframes enterZoom{
+  from{
+    transform:scale(.97);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+@keyframes exitZoom{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(.97);
+  }
+}
+
+/* KHUSUS 2 CARD */
+.cards.two-cards{
+  grid-template-columns:repeat(2,240px);
+  gap:60px;
+  justify-content:flex-start;
+  padding-top:20px;
+}
+
+/* CARD STYLE */
+.play-card{
+  text-align:left;
+}
+
+.card-img{
+  position:relative;
+  width:240px;
+  height:240px;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.card-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
+  transition:.35s ease;
+}
+
+/* PLAY BUTTON */
+.play-btn{
+  position:absolute;
+  right:14px;
+  bottom:14px;
+  width:48px;
+  height:48px;
+  background:#1db954;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#000;
+  font-size:18px;
+  opacity:0;
+  transform:translateY(8px);
+  transition:.35s ease;
+  box-shadow:0 8px 25px rgba(0,0,0,.5);
+}
+
+/* HOVER EFFECT */
+.play-card:hover img{
+  transform:scale(1.05);
+}
+
+.play-card:hover .play-btn{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* TEXT */
+.play-card h3{
+  margin-top:14px;
+  font-size:18px;
+}
+
+.play-card span{
+  font-size:13px;
+  opacity:.7;
+}
+
+/* GRADIENT KE KANAN AGAR TIDAK KOSONG */
+.content{
+  background:
+    radial-gradient(circle at left top, rgba(35,198,235,.18), transparent 45%),
+    linear-gradient(90deg,#062738 0%,#020b10 55%,#000 100%);
+}
+
+/* ANIMASI MASUK */
+.list-item{
+  animation:fadeUp .6s ease both;
+}
+
+.list-item:nth-child(2){
+  animation-delay:.1s;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}

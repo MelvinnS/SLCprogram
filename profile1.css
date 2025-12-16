@@ -1,0 +1,323 @@
+/* Styles for the detail/carousel page */
+
+.detail-content {
+  background: linear-gradient(to bottom, #333333 0%, #4a1a5c 15%, #3b1c5c 40%, #0f172a 100%);
+}
+
+.detail-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.detail-header {
+  position: relative;
+  background-image: url("assets/aboutme.png");
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+}
+
+.detail-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.artist-badge,
+.artist-name,
+.listener-count {
+  position: relative;
+  z-index: 2;
+}
+
+.artist-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.badge-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #0ea5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.artist-name {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.listener-count {
+  font-size: 16px;
+  color: #ccc;
+}
+
+.detail-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.carousel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.carousel-container {
+  position: relative;
+  width: 280px;
+  /* reduced carousel size and changed container style */
+  aspect-ratio: 3 / 4;
+  overflow: visible;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  position: relative;
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* removed background color, added layered transparency effect */
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  /* added shadow and layering effect for depth */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-item:nth-child(n + 2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  /* stacked items behind main item with reduced opacity for visual effect */
+}
+
+.carousel-item:nth-child(2) {
+  transform: translateX(16px) translateY(16px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.carousel-item:nth-child(3) {
+  transform: translateX(32px) translateY(32px);
+  opacity: 0.2;
+  z-index: -2;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #1db954;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.about-me-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-me-section h2 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.about-me-section p {
+  font-size: 27px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .detail-body {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .detail-header {
+    height: 240px;
+    padding: 25px;
+  }
+
+  .artist-name {
+    font-size: 36px;
+  }
+
+  .about-me-section h2 {
+    font-size: 28px;
+  }
+
+  .about-me-section p {
+    font-size: 14px;
+  }
+
+  .carousel-container {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .detail-header {
+    height: 200px;
+    padding: 20px;
+  }
+
+  .artist-name {
+    font-size: 28px;
+  }
+
+  .listener-count {
+    font-size: 14px;
+  }
+
+  .carousel-container {
+    aspect-ratio: 3 / 4;
+    width: 200px;
+  }
+
+  .about-me-section h2 {
+    font-size: 24px;
+  }
+
+  .about-me-section p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-section {
+    gap: 25px;
+  }
+
+  .detail-header {
+    height: 160px;
+    padding: 15px;
+  }
+
+  .artist-badge {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .badge-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .artist-name {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .listener-count {
+    font-size: 12px;
+  }
+
+  .detail-body {
+    gap: 20px;
+  }
+
+  .carousel-container {
+    aspect-ratio: 3 / 4;
+    width: 160px;
+  }
+
+  .about-me-section h2 {
+    font-size: 20px;
+  }
+
+  .about-me-section p {
+    font-size: 12px;
+  }
+}
+
+body{
+  animation:enterZoom .4s ease-out;
+}
+
+.page-exit{
+  animation:exitZoom .3s ease-in forwards;
+}
+
+@keyframes enterZoom{
+  from{
+    transform:scale(.97);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+@keyframes exitZoom{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(.97);
+  }
+}

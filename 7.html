@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend UI</title>
+  <link rel="stylesheet" href="7.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <nav class="menu">
+        <!-- HOME -> 2.html -->
+        <a href="2.html" class="active">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="library.html">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-images">
+       <a href="4.html"><img src="assets/attedance.png" /></a>
+        <a href="5.html"><img src="assets/ekskul.png" /></a>
+        <a href="6.html"><img src="assets/challanges.png" /></a>
+        <a href="7.html"><img src="assets/conclusion.png" /></a>
+        <a href="8.html"><img src="assets/support.png" /></a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="lesson-main">
+
+  <!-- TOP BAR -->
+  <div class="lesson-topbar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Back</span>
+  </div>
+
+  <!-- HERO / LESSON -->
+  <section class="lesson-hero">
+    <span class="lesson-badge">Lesson 2</span>
+
+    <h1>Conclusion & Goals</h1>
+    <p class="lesson-subtitle">Lorem ipsum dolor sit amet</p>
+
+    <div class="lesson-description">
+      <span class="red-line"></span>
+      <p>
+        Managing my time better is really important.
+
+ I want to improve more academic skills that I can master,<br> and also level up my basketball skills so I can play in DBL 2026 <br> 
+ (wish me the best)
+      </p>
+    </div>
+  </section>
+
+  <!-- VIDEO CONTROL BAR -->
+  <div class="lesson-controls">
+    <div class="left-controls">
+      <i class="fa-solid fa-play"></i>
+      <i class="fa-solid fa-rotate-left"></i>
+      <i class="fa-solid fa-rotate-right"></i>
+    </div>
+
+    <div class="right-controls">
+      <span>15:00</span>
+      <i class="fa-solid fa-expand"></i>
+    </div>
+  </div>
+
+</main>
+
+
+<script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

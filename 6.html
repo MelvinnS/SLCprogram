@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend UI</title>
+  <link rel="stylesheet" href="6.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <nav class="menu">
+        <!-- HOME -> 2.html -->
+        <a href="2.html" class="active">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="library.html">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-images">
+        <a href="4.html"><img src="assets/attedance.png" /></a>
+        <a href="5.html"><img src="assets/ekskul.png" /></a>
+        <a href="6.html"><img src="assets/challanges.png" /></a>
+        <a href="7.html"><img src="assets/conclusion.png" /></a>
+        <a href="8.html"><img src="assets/support.png" /></a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <section class="header">
+        <div class="header-left">
+          <img src="assets/challanges.png" class="profile-img" />
+          <div class="header-text">
+            <span class="small">Made For You</span>
+            <h1>Challenges & Action Plan </h1>
+            <p>this is your challenge, and how my action</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="upgrade">Upgrade</button>
+          <i class="fa-solid fa-user-group"></i>
+          <img src="assets/pp1.png" class="avatar" />
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <button class="follow">Follow</button>
+        <h2>Challenges & Action Plan</h2>
+
+        <div class="cards two-cards">
+
+  <!-- FOTO 1 -->
+  <div class="card play-card">
+    <div class="card-img">
+      <img src="assets/cleng.png" />
+      <a href="6a.html" class="play-btn">
+        <i class="fa-solid fa-play"></i>
+      </a>
+    </div>
+    <h3>Challenge</h3>
+    <span>why?</span>
+  </div>
+
+  <!-- FOTO 2 -->
+  <div class="card play-card">
+    <div class="card-img">
+      <img src="assets/act.png" />
+      <a href="6b.html" class="play-btn">
+        <i class="fa-solid fa-play"></i>
+      </a>
+    </div>
+    <h3>Action Plan</h3>
+    <span>How?</span>
+  </div>
+
+</div>
+        </section>
+        </main>
+  <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend UI</title>
+  <link rel="stylesheet" href="3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <nav class="menu">
+        <!-- HOME -> 2.html -->
+        <a href="2.html" class="active">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="library.html">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-images">
+        <a href="4.html"><img src="assets/attedance.png" /></a>
+        <a href="5.html"><img src="assets/ekskul.png" /></a>
+        <a href="6.html"><img src="assets/challanges.png" /></a>
+        <a href="7.html"><img src="assets/conclusion.png" /></a>
+        <a href="8.html"><img src="assets/support.png" /></a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <section class="header">
+        <div class="header-left">
+          <img src="assets/nilai.png" class="profile-img" />
+          <div class="header-text">
+            <span class="small">Made For You</span>
+            <h1>Insert Title Here</h1>
+            <p>Insert a concise description here.</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="upgrade">Upgrade</button>
+          <i class="fa-solid fa-user-group"></i>
+          <img src="assets/pp.jpg" class="avatar" />
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <button class="follow">Follow</button>
+        <h2>My Academic Performance</h2>
+
+        <div class="cards">
+          <div class="card">
+            <img src="assets/1.png" />
+            <h3>Pendidikan Agama </h3>
+            <span>Who is E?</span>
+          </div>
+
+          <div class="card">
+            <img src="assets/2.png" />
+            <h3>Pendidikan Pancasila</h3>
+            <span>Who is E?</span>
+          </div>
+
+          <div class="card">
+            <img src="assets/3.png" />
+            <h3>Bahasa Indonesia</h3>
+            <span>Who is E?</span>
+          </div>
+
+          <div class="card">
+            <img src="assets/4.png" />
+            <h3>Pendidikan Jasmani, Olah Raga dan Kesehatan</h3>
+            <span>Who is E?</span>
+          </div>
+
+          <div class="card">
+            <img src="assets/5.png" />
+            <h3>Sejarah</h3>
+            <span>Who is E?</span>
+          </div> 
+
+           <div class="card">
+            <img src="assets/6.png" />
+            <h3>Matematika</h3>
+            <span>Who is E?</span>
+          </div>
+
+           <div class="card">
+            <img src="assets/8.png" />
+            <h3>Bahasa Inggris</h3>
+            <span>Who is E?</span>
+          </div>
+
+           <div class="card">
+            <img src="assets/8.png" />
+            <h3>Rekayasa Perangkat Lunak</h3>
+            <span>Who is E?</span>
+          </div>
+
+           <div class="card">
+            <img src="assets/9.png" />
+            <h3>Kewirausahaan</h3>
+            <span>Who is E?</span>
+          </div>
+
+           <div class="card">
+            <img src="assets/10.png" />
+            <h3>Teknik Komputer dan Jaringan</h3>
+            <span>Who is E?</span>
+          </div>
+
+           <div class="card">
+            <img src="assets/11.png" />
+            <h3>Koding dan Kecerdasan Artifisial</h3>
+            <span>Koding dan Kecerdasan Artifisial</span>
+          </div>
+
+           <div class="card">
+            <img src="assets/12.png" />
+            <h3>Bahasa Jawa</h3>
+            <span>Bahasa Jawa</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+  <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

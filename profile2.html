@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobby - Spotify</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profile2.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Sidebar (sama dengan profile) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Your Library</h3>
+                <div class="sidebar-actions">
+                    <button class="create-btn">+ Create</button>
+                    <button class="expand-btn">↗</button>
+                </div>
+            </div>
+
+            <div class="sidebar-tabs">
+                <button class="tab-btn active">Playlists</button>
+                <button class="tab-btn">Podcasts</button>
+            </div>
+
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <div class="sidebar-content">
+                <a href="4.html" class="playlist-item">
+                    <img src="assets/lib1.png" alt="Reporter 1">
+                    <div>
+                        <h4>Reporter 1</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="5.html" class="playlist-item">
+                    <img src="assets/lib2.png" alt="Reporter 2">
+                    <div>
+                        <h4>Reporter 2</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="6.html" class="playlist-item">
+                    <img src="assets/lib3.png" alt="Reporter 3">
+                    <div>
+                        <h4>Reporter 3</h4>
+                        <p>Playlist • FallSkie.</p>
+                    </div>
+                </a>
+
+                <a href="7.html" class="playlist-item">
+                    <img src="assets/lib4.png" alt="Reporter 4">
+                    <div>
+                        <h4>Reporter 4</h4>
+                        <p>Playlist • early</p>
+                    </div>
+                </a>
+
+                <a href="3.html" class="playlist-item">
+                    <img src="assets/lib5.png" alt="Reporter 4">
+                    <div>
+                        <h4>Reporter 4</h4>
+                        <p>Playlist</p>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="profile-content detail-content hobby-content">
+            <!-- Header with Back Button -->
+            <div class="profile-header">
+                <a href="profile.html" class="back-btn">←</a>
+            </div>
+
+            <!-- Detail Section -->
+            <section class="detail-section hobby-section">
+                <!-- Top area with large background image -->
+                <div class="detail-header hobby-header">
+                    <div class="artist-badge">
+                        <span class="badge-icon">✓</span>
+                        <span class="badge-text">Verified Artist</span>
+                    </div>
+                    <h1 class="artist-name">Lana Del Rey</h1>
+                    <p class="listener-count">61,931,181 monthly listeners</p>
+                </div>
+
+              <h1 class="title">My Hobby</h1>
+
+              <br>
+              <br>
+              
+
+   <div class="hobby-block">
+  <div class="carousel-wrapper">
+    <button class="nav prev">‹</button>
+
+    <div class="carousel-track">
+      <img src="assets/aboutme.png">
+      <img src="assets/hobby.png">
+      <img src="assets/pp1.png">
+    </div>
+
+    <button class="nav next">›</button>
+  </div>
+
+  <div class="hobby-text">
+    <h2>Basketball</h2>
+    <p>sport</p>
+  </div>
+</div>
+
+<div class="hobby-block">
+  <div class="carousel-wrapper">
+    <button class="nav prev">‹</button>
+
+    <div class="carousel-track">
+      <img src="assets/aboutme.png">
+      <img src="assets/hobby.png">
+      <img src="assets/pp1.png">
+    </div>
+
+    <button class="nav next">›</button>
+  </div>
+
+  <div class="hobby-text">
+    <h2>Ride and Tour</h2>
+    <p>otomotif</p>
+  </div>
+</div>
+
+<div class="hobby-block">
+  <div class="carousel-wrapper">
+    <button class="nav prev">‹</button>
+
+    <div class="carousel-track">
+      <img src="assets/aboutme.png">
+      <img src="assets/hobby.png">
+      <img src="assets/pp1.png">
+    </div>
+
+    <button class="nav next">›</button>
+  </div>
+
+  <div class="hobby-text">
+    <h2>hiking</h2>
+    <p>climb</p>
+  </div>
+</div>
+<script src="carousel.js"></script>
+<script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

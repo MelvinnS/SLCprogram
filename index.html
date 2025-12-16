@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journey - Spotify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- Spotify logo from assets folder -->
+            <div class="logo-container">
+                <img src="assets/spoyifylogo.png" alt="Spotify Logo" class="logo">
+            </div>
+            
+            <!-- Main heading and subtitle -->
+            <h1 class="title">My Learning Journey</h1>
+            <p class="subtitle">Melvin Andrea Ismiananta • 21</p>
+            
+            <!-- Action buttons with smooth transitions -->
+            <div class="buttons-container">
+                <button class="btn btn-outline" onclick="goToSignUp()">Sign up free</button>
+                <button class="btn btn-primary" id="loginBtn" onclick="goToLogin()">Log In</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToLogin() {
+            const btn = document.getElementById('loginBtn');
+            btn.classList.add('clicked');
+            
+            // Smooth fade-out animation then redirect
+            setTimeout(() => {
+                window.location.href = '2.html';
+            }, 600);
+        }
+
+        function goToSignUp() {
+            alert('Sign up functionality coming soon!');
+        }
+    </script>
+    <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 350);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

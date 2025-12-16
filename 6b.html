@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Academic Performance</title>
+  <link rel="stylesheet" href="6b.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">mylooo</div>
+
+    <div class="top-actions">
+      <button class="upgrade">upgrade</button>
+      <button class="close" onclick="history.back()">✕</button>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <div class="left">
+      <img src="assets/act.png" alt="cover">
+    </div>
+
+    <div class="right">
+      <h1>My Academic Performance</h1>
+      <p>Prioritizing my school assignments before anything else.<br> I use the Notion app to help me keep track of my tasks</p>
+    </div>
+  </main>
+
+  <!-- MUSIC PLAYER -->
+  <footer class="player">
+    <div class="song-info">
+      <img src="assets/pp1.png" alt="">
+      <div>
+        <div class="title">Take A Chance With Me</div>
+        <div class="artist">NIKI</div>
+      </div>
+    </div>
+
+    <div class="controls">
+  <div class="btn small"></div>
+  <div class="btn small"></div>
+
+  <!-- PLAY BUTTON -->
+  <div class="play-btn">
+    <div class="triangle"></div>
+  </div>
+
+  <div class="btn small"></div>
+  <div class="btn small"></div>
+</div>
+
+
+    <div class="progress">
+      <span>0:05</span>
+      <div class="bar">
+        <div class="fill"></div>
+      </div>
+      <span>5:03</span>
+    </div>
+
+    <audio src="music.mp3"></audio>
+  </footer>
+<script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

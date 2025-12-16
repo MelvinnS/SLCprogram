@@ -1,0 +1,613 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0f172a;
+  color: #fff;
+}
+
+.profile-container {
+  display: flex;
+  height: 100vh;
+  background-color: #0f172a;
+}
+
+/* ===== SIDEBAR STYLES ===== */
+.sidebar {
+  width: 400px;
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.create-btn,
+.expand-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.create-btn:hover,
+.expand-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.sidebar-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background-color: #2a2a2a;
+  border: none;
+  color: #999;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.tab-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.sidebar-search {
+  margin-bottom: 20px;
+}
+
+.sidebar-search input {
+  width: 100%;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.sidebar-search input::placeholder {
+  color: #666;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playlist-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  background-color: #2a2a2a;
+}
+
+.playlist-item:hover {
+  background-color: #333;
+}
+
+.playlist-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.playlist-item div h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.playlist-item div p {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ===== MAIN CONTENT STYLES ===== */
+.profile-content {
+  flex: 1;
+  background: linear-gradient(to bottom, #b832d4 0%, #8b2ba5 20%, #3b1c5c 50%, #0f172a 100%);
+  overflow-y: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.back-btn:hover {
+  opacity: 0.7;
+}
+
+.profile-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.profile-top {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.profile-pic-container {
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-info-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.profile-name {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.profile-info {
+  font-size: 22px;
+  color: #ccc;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn-add,
+.btn-edit {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+}
+
+.btn-add {
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-add:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-edit {
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.about-section {
+  width: 100%;
+}
+
+.about-section h2 {
+  font-size: 28px;
+  font-weight: 730;
+  margin-bottom: 25px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+}
+
+.about-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Reduced image size by 30% while maintaining aspect ratio */
+.image-wrapper {
+  position: relative;
+  width: 70%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Play button positioning remains absolute to bottom-right corner */
+.play-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  background-color: #1db954;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: #1ed760;
+  transform: scale(1.1);
+}
+
+.play-icon {
+  color: #000;
+  font-size: 24px;
+  margin-left: 2px;
+}
+
+.about-item h3 {
+  font-size: 24px;
+  font-weight: 770;
+  margin-top: 1px;
+}
+
+.about-item p {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+/* ===== SCROLLBAR STYLES ===== */
+.sidebar-content::-webkit-scrollbar,
+.profile-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-content::-webkit-scrollbar-track,
+.profile-content::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb,
+.profile-content::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 44px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover,
+.profile-content::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 350px;
+    padding: 18px;
+  }
+
+  .profile-content {
+    padding: 30px;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-name {
+    font-size: 36px;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .image-wrapper {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    padding: 12px;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  .sidebar-header {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .sidebar-header h3 {
+    font-size: 16px;
+  }
+
+  .sidebar-actions {
+    gap: 5px;
+  }
+
+  .sidebar-tabs {
+    display: none;
+  }
+
+  .sidebar-search {
+    display: none;
+    margin-bottom: 0;
+  }
+
+  .sidebar-content {
+    flex-direction: row;
+    gap: 8px;
+    width: auto;
+  }
+
+  .playlist-item {
+    flex-shrink: 0;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .playlist-item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .playlist-item div h4 {
+    font-size: 12px;
+  }
+
+  .playlist-item div p {
+    display: none;
+  }
+
+  .profile-content {
+    padding: 20px;
+  }
+
+  .profile-header {
+    margin-bottom: 20px;
+  }
+
+  .profile-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 28px;
+  }
+
+  .profile-info {
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  .profile-buttons {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .btn-add,
+  .btn-edit {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .about-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .play-icon {
+    font-size: 20px;
+  }
+
+  .about-item h3 {
+    font-size: 14px;
+  }
+
+  .about-item p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-header h3 {
+    font-size: 14px;
+  }
+
+  .create-btn,
+  .expand-btn {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-name {
+    font-size: 22px;
+  }
+
+  .profile-info {
+    font-size: 12px;
+  }
+
+  .btn-add,
+  .btn-edit {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  .about-section h2 {
+    font-size: 18px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+
+  .play-button {
+    width: 45px;
+    height: 45px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .play-icon {
+    font-size: 18px;
+  }
+
+  .about-item h3 {
+    font-size: 13px;
+  }
+
+  .about-item p {
+    font-size: 11px;
+  }
+}
+
+body{
+  animation:enterZoom .4s ease-out;
+}
+
+.page-exit{
+  animation:exitZoom .3s ease-in forwards;
+}
+
+@keyframes enterZoom{
+  from{
+    transform:scale(.97);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+@keyframes exitZoom{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(.97);
+  }
+}

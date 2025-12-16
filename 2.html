@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Dashboard</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <!-- Home icon at top -->
+                <a href="#" class="sidebar-item active">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </a>
+                
+                <!-- Search icon -->
+                <a href="#" class="sidebar-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/>
+                    </svg>
+                </a>
+                
+                <!-- Library/Book icon -->
+                <a href="#" class="sidebar-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                    </svg>
+                </a>
+
+                <!-- Sidebar Image Items with Overlay -->
+                <div class="sidebar-item-image">
+                    <img src="assets/attedance.png" alt="Library 1">
+                    <div class="sidebar-item-overlay"></div>
+                </div>
+
+                <div class="sidebar-item-image">
+                    <img src="assets/ekskul.png" alt="Library 2">
+                    <div class="sidebar-item-overlay"></div>
+                </div>
+
+                <div class="sidebar-item-image">
+                    <img src="assets/challanges.png" alt="Library 3">
+                    <div class="sidebar-item-overlay"></div>
+                </div>
+
+                <div class="sidebar-item-image">
+                    <img src="assets/conclusion.png" alt="Library 4">
+                    <div class="sidebar-item-overlay"></div>
+                </div>
+
+                <div class="sidebar-item-image">
+                    <img src="assets/support.png" alt="Library 5">
+                    <div class="sidebar-item-overlay"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header with blue-to-black gradient -->
+            <header class="header header-gradient">
+                <div class="header-left">
+                    <button class="btn-upgrade">Upgrade</button>
+                </div>
+                <div class="header-right">
+                    <button class="btn-users">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </button>
+                    <button class="btn-profile" onclick="goToProfile()">
+                        <img src="assets/pp.jpg" alt="Profile">
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Featured Report Section -->
+                <div class="featured-report" onclick="goToPage(3)">
+                    <div class="featured-image">
+                        <img src="assets/nilai.png" alt="Featured Report">
+                         
+                    </div>
+                    <div class="featured-content">
+                        <p class="featured-label">Page 1</p>
+                        <h2 class="featured-title">My Academic Performance</h2>
+                        <p class="featured-description">
+                           This page contains my report card grades for this semester, namely the combined grades of daily grades and basic grades. These are the original grades on my report card, but I apologize if my grades are not very good.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Good Day Text -->
+                <h3 class="section-title">Good Day, Everyone.</h3>
+
+                <!-- Reporters Grid -->
+                <div class="reporters-grid">
+                    <!-- Reporter 1 -->
+                    <div class="reporter-card" onclick="goToPage(4)">
+                        <div class="reporter-image">
+                            <img src="assets/attedance.png" alt="Reporter 1">
+                             
+                        </div>
+                        <h4 class="reporter-name">Attedance</h4>
+                        <p class="reporter-description">Page 2</p>
+                    </div>
+
+                    <!-- Reporter 2 -->
+                    <div class="reporter-card" onclick="goToPage(5)">
+                        <div class="reporter-image">
+                            <img src="assets/ekskul.png" alt="Reporter 2">
+                            
+                        </div>
+                        <h4 class="reporter-name">Extracurriculars</h4>
+                        <p class="reporter-description">Page 3</p>
+                    </div>
+
+                    <!-- Reporter 3 -->
+                    <div class="reporter-card" onclick="goToPage(6)">
+                        <div class="reporter-image">
+                            <img src="assets/challanges.png" alt="Reporter 3">
+                            
+                        </div>
+                        <h4 class="reporter-name">Challenges & Act</h4>
+                        <p class="reporter-description">Page 4</p>
+                    </div>
+
+                    <!-- Reporter 4 -->
+                    <div class="reporter-card" onclick="goToPage(7)">
+                        <div class="reporter-image">
+                            <img src="assets/conclusion.png" alt="Reporter 4">
+                            
+                        </div>
+                        <h4 class="reporter-name">Conclusion</h4>
+                        <p class="reporter-description">Page 5</p>
+                    </div>
+
+                    <!-- Reporter 5 (goes to page 9) -->
+                    <div class="reporter-card" onclick="goToPage(8)">
+                        <div class="reporter-image">
+                            <img src="assets/support.png" alt="Reporter 5">
+                           
+                        </div>
+                        <h4 class="reporter-name">Supports</h4>
+                        <p class="reporter-description">Page 6</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function goToPage(pageNumber) {
+            window.location.href = `${pageNumber}.html`;
+        }
+
+        function goToProfile() {
+            window.location.href = 'profile.html';
+        }
+    </script>
+<script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

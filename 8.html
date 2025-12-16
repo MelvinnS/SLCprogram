@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend UI</title>
+  <link rel="stylesheet" href="8.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <nav class="menu">
+        <!-- HOME -> 2.html -->
+        <a href="2.html" class="active">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="library.html">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-images">
+        <a href="4.html"><img src="assets/pp1.png" /></a>
+        <a href="5.html"><img src="assets/pp1.png" /></a>
+        <a href="6.html"><img src="assets/pp1.png" /></a>
+        <a href="7.html"><img src="assets/pp1.png" /></a>
+        <a href="8.html"><img src="assets/pp1.png" /></a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <span class="series">N SERIES</span>
+
+      <h1>Supports Needed</h1>
+
+      <p class="hero-desc">
+        For my parents: I need your support 
+        so I can be more motivated in both 
+        academics and non-academics.
+      </p>
+
+      <div class="list">
+
+        <div class="list-item">
+          <span class="number">02</span>
+          <div>
+            <h2>Teacher</h2>
+            <p>
+              For my teacher: I need your guidance 
+              to help me grow in my studies.
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item">
+          <span class="number">03</span>
+          <div>
+            <h2>Friend</h2>
+            <p>
+              For my friends: especially my best friends,
+               I really need your support.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button class="close-btn">✕</button>
+  </section>
+
+</main>
+
+
+  </div>
+  <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

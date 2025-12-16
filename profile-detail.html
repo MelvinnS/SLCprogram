@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Detail</title>
+    <link rel="stylesheet" href="profile-detail.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="menu-dots">⋯</div>
+            </div>
+            
+            <div class="sidebar-nav">
+                <button class="nav-btn active">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </button>
+                <button class="nav-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/>
+                    </svg>
+                </button>
+                <button class="nav-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 18c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-7-2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm14 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="library-section">
+                <h3>Your Library</h3>
+                <div class="library-buttons">
+                    <button class="lib-btn">+ Create</button>
+                    <button class="lib-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn">Playlists</button>
+                    <button class="filter-btn">Podcasts</button>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search">
+                </div>
+
+                <div class="library-items">
+                    <div class="library-item">
+                        <img src="assets/lib1.png" alt="Reporter 1">
+                        <div class="item-info">
+                            <h4>Reporter 1</h4>
+                            <p>Playlist • FallSkie.</p>
+                        </div>
+                    </div>
+                    <div class="library-item">
+                        <img src="assets/lib2.png" alt="Reporter 2">
+                        <div class="item-info">
+                            <h4>Reporter 2</h4>
+                            <p>Playlist • FallSkie.</p>
+                        </div>
+                    </div>
+                    <div class="library-item">
+                        <img src="assets/lib3.png" alt="Reporter 3">
+                        <div class="item-info">
+                            <h4>Reporter 3</h4>
+                            <p>Playlist • FallSkie.</p>
+                        </div>
+                    </div>
+                    <div class="library-item">
+                        <img src="assets/lib4.png" alt="Reporter 4">
+                        <div class="item-info">
+                            <h4>Reporter 4</h4>
+                            <p>Playlist • early</p>
+                        </div>
+                    </div>
+                    <div class="library-item">
+                        <img src="assets/lib5.png" alt="Reporter 4">
+                        <div class="item-info">
+                            <h4>Reporter 4</h4>
+                            <p>Playlist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <button class="back-btn" onclick="window.location.href='profile.html'">←</button>
+            </div>
+
+            <!-- Background Carousel -->
+            <div class="background-carousel">
+                <img src="assets/aboutme.png" alt="bg1" class="carousel-img active">
+                <img src="assets/hobby.png" alt="bg2" class="carousel-img">
+                <img src="assets/pp1.png" alt="bg3" class="carousel-img">
+                <div class="carousel-overlay"></div>
+            </div>
+
+            <!-- Artist Info -->
+            <div class="artist-info">
+                <div class="verified-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#1db954">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    Verified Artist
+                </div>
+                <h1>Lana Del Rey</h1>
+                <p class="listeners">61,931,181 monthly listeners</p>
+            </div>
+
+            <!-- About Section -->
+            <div class="about-section">
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <img src="assets/aboutme.png" alt="carousel1" class="carousel-photo active">
+                        <img src="assets/hobby.png" alt="carousel2" class="carousel-photo">
+                        <img src="assets/pp1.png" alt="carousel3" class="carousel-photo">
+                    </div>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>i was born in Malang on 6 june 2009 and i have a many skils at telkoms bla bla bla bla bla bla bla bla bla</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="profile-detail.js"></script>
+    <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 350);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend UI</title>
+  <link rel="stylesheet" href="5.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <nav class="menu">
+        <!-- HOME -> 2.html -->
+        <a href="2.html" class="active">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="library.html">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-images">
+        <a href="4.html"><img src="assets/attedance.png" /></a>
+        <a href="5.html"><img src="assets/ekskul.png" /></a>
+        <a href="6.html"><img src="assets/challanges.png" /></a>
+        <a href="7.html"><img src="assets/conclusion.png" /></a>
+        <a href="8.html"><img src="assets/support.png" /></a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <section class="header">
+        <div class="header-left">
+          <img src="assets/ekskul.png" class="profile-img" />
+          <div class="header-text">
+            <span class="small">Made For You</span>
+            <h1>Extracurriculars</h1>
+            <p>list of extracurricular activities and organizations that I participate in</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="upgrade">Upgrade</button>
+          <i class="fa-solid fa-user-group"></i>
+          <img src="assets/pp.jpg" class="avatar" />
+        </div>
+      </section>
+
+      <section class="content">
+  <div class="content-top">
+    <button class="follow">Follow</button>
+
+    <div class="content-actions">
+      <button class="soft-btn">+ Add</button>
+      <button class="soft-btn">Edit</button>
+    </div>
+  </div>
+
+  <h2>My Extracurriculars Performance</h2>
+
+  <!-- TABLE HEADER -->
+  <div class="table-header">
+    <span># Title</span>
+    <span>Album</span>
+    <span class="right">Time</span>
+  </div>
+
+  <!-- LIST -->
+  <div class="list">
+
+   <a href="5a.html" class="list-link">
+  <div class="list-item">
+    <span class="index">1</span>
+    <img src="assets/ekskul1.png" />
+    <div class="info">
+      <strong>Basketball</strong>
+      <small>Sports – Extra</small>
+    </div>
+    <span class="album">Melvin</span>
+    <span class="time">1 years</span>
+  </div>
+</a>
+
+<a href="5b.html" class="list-link">
+    <div class="list-item">
+      <span class="index">2</span>
+      <img src="assets/ekskul2.png" />
+      <div class="info">
+        <strong>Media Moklet</strong>
+        <small>Video & Photographer – Organizations</small>
+      </div>
+      <span class="album">Melvin</span>
+      <span class="time">1 years</span>
+    </div>
+</a>
+
+  </div>
+</section>
+
+  <script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

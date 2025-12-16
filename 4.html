@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend UI</title>
+  <link rel="stylesheet" href="4.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <nav class="menu">
+        <!-- HOME -> 2.html -->
+        <a href="2.html" class="active">
+          <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="search.html">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+
+        <a href="library.html">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-images">
+        <a href="4.html"><img src="assets/attedance.png" /></a>
+        <a href="5.html"><img src="assets/ekskul.png" /></a>
+        <a href="6.html"><img src="assets/challanges.png" /></a>
+        <a href="7.html"><img src="assets/conclusion.png" /></a>
+        <a href="8.html"><img src="assets/support.png" /></a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <section class="header">
+        <div class="header-left">
+          <img src="assets/attedance.png" class="profile-img" />
+          <div class="header-text">
+            <span class="small">Made For You</span>
+            <h1>Attedance</h1>
+            <p>my presence for 1 semester</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="upgrade">Upgrade</button>
+          <i class="fa-solid fa-user-group"></i>
+          <img src="assets/pp.jpg" class="avatar" />
+        </div>
+      </section>
+
+    <section class="content dashboard-layout">
+  <button class="follow">Follow</button>
+
+  <div class="dashboard-grid">
+
+    <!-- LEFT -->
+    <div class="left-panel">
+      <div class="attendance-card">
+        <div class="present">
+          <span>Present Percentage</span>
+          <h2>90%</h2>
+        </div>
+
+        <div class="attendance-item on-duty">
+          <span>On Duty</span>
+          <strong>1</strong>
+        </div>
+        <div class="attendance-item sick">
+          <span>Sick</span>
+          <strong>6</strong>
+        </div>
+        <div class="attendance-item permit">
+          <span>Permit</span>
+          <strong>0</strong>
+        </div>
+        <div class="attendance-item alpha">
+          <span>Alpha</span>
+          <strong>2</strong>
+        </div>
+
+        <p class="attendance-note">
+          If there are invalid data, please report them to the admin
+        </p>
+      </div>
+
+      <div class="photo-info">
+        <img src="assets/pp1.png" />
+        <h3>Foto 1</h3>
+        <span>Who is E?</span>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="center-panel">
+
+      <!-- STATUS -->
+      <div class="status-card">
+        <div>
+          <span class="date">Rabu, 17 Desember 2025</span>
+          <p class="label">Status</p>
+          <h2>Not Present</h2>
+        </div>
+        <i class="fa-solid fa-fingerprint fingerprint"></i>
+      </div>
+
+      <!-- GURU PIKET -->
+      <div class="teacher-card">
+        <i class="fa-solid fa-bullhorn"></i>
+        <div>
+          <strong>Guru Piket hari ini :</strong>
+          <p>R.P.L Melvin Andrea, iziiinnnn, egiluuyyy</p>
+        </div>
+      </div>
+
+      <!-- ATTENDANCE -->
+      <!-- <div class="month-nav">
+        <button>&lt;</button>
+        <span>December 2025</span>
+        <button>&gt;</button>
+      </div> -->
+
+      <div class="attendance-box">
+        <h1>Attendance</h1>
+        <p>
+          This semester I got sick 6 times, went on permit 0 times<br />
+          and alpha 2 times.
+        </p>
+        <p class="highlight">
+          With a 90% attendance rate (Moklet App)
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-panel">
+      <h2>LEADER BOARD</h2>
+      <span class="subtitle">TOP 15 ATTENDANCE</span>
+
+      <div class="leader-item">
+        <i class="fa-regular fa-user"></i>
+        <div class="leader-info">
+          <strong>Melvin Andrea</strong>
+          <span>05:25:03</span>
+        </div>
+        <div class="rank">1</div>
+      </div>
+
+      <div class="leader-item delay-1">
+        <i class="fa-regular fa-user"></i>
+        <div class="leader-info">
+          <strong>el_falskie</strong>
+          <span>05:40:10</span>
+        </div>
+        <div class="rank">2</div>
+      </div>
+
+      <div class="leader-item delay-2">
+        <i class="fa-regular fa-user"></i>
+        <div class="leader-info">
+          <strong>the coolest, fall!</strong>
+          <span>05:55:42</span>
+        </div>
+        <div class="rank">3</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e){
+      const url = this.getAttribute("href");
+
+      if(url && !url.startsWith("#") && !url.startsWith("javascript")){
+        e.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
